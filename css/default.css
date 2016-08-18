@@ -1,0 +1,160 @@
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+h2,h3,h3,h4,h5{
+  /*text-align: center;*/
+
+}
+h2{
+  padding-left: 12px;
+  border-left: solid 4px #337ab7
+}
+footer{
+  text-align: center;
+  margin: 40px;
+}
+
+footer a:hover{
+  text-decoration: none;
+}
+.navbar-inverse .navbar-nav>li>a {
+  color: #cdcdcd;
+}
+
+header.jumbotron-1 {
+  background: url("../img/Gaskellball.jpg");
+  background-position: center center;
+  background-size: cover;
+  color: #eee;
+  height: 100%;
+}
+
+header.jumbotron-2 {
+  background: url("../img/2005_ballroom_dance_championships.jpg");
+  background-position: center center;
+  background-size: cover;
+  color: #eee;
+  height: 100%;
+}
+
+header.jumbotron-3 {
+  background: url("../img/latin.jpg");
+  background-position: center center;
+  background-size: cover;
+  color: #eee;
+  height: 100%;
+}
+header.jumbotron-4 {
+  background: url("../img/Chicago-City-Ballroom.jpg");
+  background-position: center center;
+  background-size: cover;
+  color: #eee;
+  height: 100%;
+}
+
+header.jumbotron-1 small{
+  color: #eee
+}
+
+header.jumbotron-1 p{
+  color: #eee
+}
+
+header.jumbotron-1 a, a:focus, a:hover{
+  color: #337ab7;
+  text-decoration: underline;
+}
+
+header.jumbotron-2 small{
+  color: #eee;
+}
+
+header.jumbotron-2 p{
+  color: #eee;
+}
+
+header.jumbotron-3 small{
+  color: #eee;
+}
+
+header.jumbotron-3 p{
+  color: #eee;
+}
+
+header.jumbotron-4 small{
+  color: #eee;
+}
+header.jumbotron-4 p{
+  color: #eee;
+}
+
+
+.ggmap {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 30px;
+height: 0;
+overflow: hidden;
+}
+
+.ggmap iframe,
+.ggmap object,
+.ggmap embed {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+.gc_wrapper {
+  max-width: 800px;
+  min-width: 300px;
+  margin: 2.0833% auto;
+}
+
+.responsive-iframe-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+.responsive-iframe-container iframe,
+.responsive-iframe-container object,
+.responsive-iframe-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 600px) {
+    .big-container {
+        display: none;
+    }
+    .small-container {
+       padding-bottom: 200%;   /* 高さ */
+    }
+}
+@media (min-width: 600px) {
+    .small-container {
+        display: none;
+    }
+}
+
+footer ul li {
+    border-right: 1px solid #CCC;
+}
+footer ul li.first{
+    border-left: 1px solid #CCC;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 970px;
+}
