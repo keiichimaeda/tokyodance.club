@@ -19,6 +19,11 @@
     <link href="css/default.css" rel="stylesheet" />
     <meta name="google-site-verification" content="3FMCXn7edEKeuPbBZVuUci03THazRG1tTIxs8Ad4kmc" />
     <meta name="msvalidate.01" content="29AAC44FB92C8363CF0800E519FC741C" />
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-79425915-1', 'auto');
+      ga('send', 'pageview');
+    </script>
   </head>
   <body>
     <nav class="navbar navbar-inverse">
@@ -188,11 +193,11 @@
 
       </div>
       <div class="col-md-4">
+
         <section>
           <h2>最新情報</h2>
           <h3>ブログ</h3>
           <div id="feed"></div>
-
         <hr/>
 
           <h3>公式LINE</h3>
@@ -208,6 +213,20 @@
         <a href="https://twitter.com/minatodance/" class="btn btn-info btn-lg btn-block" target="_blank">Twitter</a>
 
         <hr/>
+
+        <!--
+        <section>
+          <h2>写真</h2>
+          <div id="slideshow" class="slideshow">
+            <img src="/blog/wp-content/uploads/2016/08/IMG_0154-768x494.jpg" alt="" width="300px" height="200px"/>
+            <img src="/blog/wp-content/uploads/2016/08/IMG_0152-768x506.jpg" alt="" width="300px" height="200px"/>
+            <img src="/blog/wp-content/uploads/2016/08/IMG_0160-768x455.jpg" alt="" width="300px" height="200px"/>
+            <img src="/blog/wp-content/uploads/2016/08/IMG_0155-768x479.jpg" alt="" width="300px" height="200px"/>
+          </div>
+        </section>
+        <hr/>
+      -->
+
 
       </div>
       </div>
@@ -259,11 +278,27 @@
         var container = document.getElementById("feed");
         container.innerHTML = htmlstr;
     });
-    </script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-79425915-1', 'auto');
-      ga('send', 'pageview');
+
+    $(window).load(function() {
+	    var img = $("#slideshow").children("img"), // 画像を取得
+		  num = img.length, // 画像の数を数える
+		  count = 0, // 現在何枚目を表示しているかのカウンター
+		  interval = 10000; // 次の画像に切り替わるまでの時間(1/1000秒)
+
+      img.eq(0).addClass("show"); // 最初の画像にshowクラス付与
+
+      setTimeout(slide, interval); // slide関数をタイマーセット
+
+      function slide() {
+		    img.eq(count).removeClass("show"); // 現在表示している画像からshowクラスを取り除く
+		    count++; // カウンターを一個進める
+		    if(count >= num) {
+	        count = 0; // カウンターが画像の数より大きければリセット
+		    }
+        img.eq(count).addClass("show"); // 次の画像にshowクラス付与
+        setTimeout(slide, interval); // 再びタイマーセット
+      }
+    });
     </script>
     <script src="js/bootstrap.min.js"></script>
   </body>
